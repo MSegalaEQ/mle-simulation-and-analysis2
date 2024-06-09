@@ -75,8 +75,10 @@ $$
 Taking the derivative of this equation, the left side returns 1 and the right side returns:
 
 $$
-\frac{\partial}{\partial \theta} \int \dots \int \hat{\theta}(y) f(y; \theta) \ dy =\\
-\\
+\frac{\partial}{\partial \theta} \int \dots \int \hat{\theta}(y) f(y; \theta) \ dy =
+$$
+
+$$
 = \int \dots \int \hat{\theta}(y) \frac{\partial f(y; \theta)}{\partial \theta} \ dy
 $$
 
