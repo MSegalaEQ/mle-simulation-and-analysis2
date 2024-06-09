@@ -76,14 +76,12 @@ Taking the derivative of this equation, the left side returns 1 and the right si
 
 $$
 \frac{\partial}{\partial \theta} \int \dots \int \hat{\theta}(y) f(y; \theta) \ dy =
-$$
-
-$$
+\\
 = \int \dots \int \hat{\theta}(y) \frac{\partial f(y; \theta)}{\partial \theta} \ dy
 $$
 
 $$
-= \int \dots \int \hat{\theta}(y) \frac{\partial f(y; \theta)}{\partial \theta} \cdot \fraq{f(y; \theta)}{f(y; \theta)} \ dy
+= \int \dots \int \hat{\theta}(y) \frac{\partial f(y; \theta)}{\partial \theta} \cdot \frac{f(y; \theta)}{f(y; \theta)} \ dy
 $$
 
 $$
@@ -99,7 +97,7 @@ $$
 $$
 
 $$
-\text{Cov}\left( \hat{\theta}(Y), \frac{\partial \log f(Y; \theta)}{\partial \theta} \right) = 1
+= \text{Cov}\left( \hat{\theta}(Y), \frac{\partial \log f(Y; \theta)}{\partial \theta} \right) = 1
 $$
 
 Therefore:
