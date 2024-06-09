@@ -29,35 +29,35 @@ $$
 Therefore:
 
 $$
-\text{Var}(W) \geq \frac{\text{Cov}^2(W, V)}{\text{Var}(V)}$
+\text{Var}(W) \geq \frac{\text{Cov}^2(W, V)}{\text{Var}(V)}
 $$
 
 Using the definition of covariance:
 
 $$
-\text{Cov}(W, V) = E(W*V) - E(W)E(V)
+\text{Cov}(W, V) = E(W\dotV) - E(W)E(V)
 $$
 
 For a given parameter $W = \hat{\theta}$ and the score function $V = {\partial \ell}/{\partial \theta}$:
 
 $$
-\text{Var}\left( \frac{\partial \ell}{\partial \theta} \right) = E\left[ \left( \frac{\partial \ell}{\partial \theta} \right)^2 \right] - \left( E\left( \frac{\partial \ell}{\partial \theta} \right) \right)^2
+\text{Var}\left( \frac{\partial \ell}{\partial \theta} \right) = \mathbb{E}\left[ \left( \frac{\partial \ell}{\partial \theta} \right)^2 \right] - \left( \mathbb{E}\left( \frac{\partial \ell}{\partial \theta} \right) \right)^2
 $$
 
-The expected value for the score function, $\left( E\left( \frac{\partial \ell}{\partial \theta} \right) \right)^2$, is equal zero for any statistical model, so:
+The expected value for the score function, $\left( \mathbb{E}\left( \frac{\partial \ell}{\partial \theta} \right) \right)^2$, is equal zero for any statistical model, so:
 
 $$
-\text{Var}\left( \frac{\partial \ell}{\partial \theta} \right) = E\left( \left( \frac{\partial \ell}{\partial \theta} \right)^2 \right) = I(\theta)
+\text{Var}\left( \frac{\partial \ell}{\partial \theta} \right) = \mathbb{E}\left( \left( \frac{\partial \ell}{\partial \theta} \right)^2 \right) = I(\theta)
 $$
 
 And
 
 $$
-\text{Cov}\left(\hat{\theta}, \frac{\partial \ell}{\partial \theta}\right) = E\left(\hat{\theta} \frac{\partial \ell}{\partial \theta}\right) - E(\hat{\theta}) E\left(\frac{\partial \ell}{\partial \theta}\right)
+\text{Cov}\left(\hat{\theta}, \frac{\partial \ell}{\partial \theta}\right) = \mathbb{E}\left(\hat{\theta} \frac{\partial \ell}{\partial \theta}\right) - E(\hat{\theta}) \mathbb{E}\left(\frac{\partial \ell}{\partial \theta}\right)
 $$
 
 $$
-\text{Cov}\left(\hat{\theta}, \frac{\partial \ell}{\partial \theta}\right) = E\left(\hat{\theta} \frac{\partial \ell}{\partial \theta}\right)
+\text{Cov}\left(\hat{\theta}, \frac{\partial \ell}{\partial \theta}\right) = \mathbb{E}\left(\hat{\theta} \frac{\partial \ell}{\partial \theta}\right)
 $$
 
 Finally:
@@ -87,7 +87,7 @@ $$
 $$
 
 $$
-E\left( \hat{\theta}(Y) \frac{\partial \log f(Y; \theta)}{\partial \theta} \right) = \text{Cov}\left( \hat{\theta}(Y), \frac{\partial \log f(Y; \theta)}{\partial \theta} \right)
+\mathbb{E}\left( \hat{\theta}(Y) \frac{\partial \log f(Y; \theta)}{\partial \theta} \right) = \text{Cov}\left( \hat{\theta}(Y), \frac{\partial \log f(Y; \theta)}{\partial \theta} \right)
 $$
 
 $$
