@@ -35,13 +35,13 @@ $$
 Using the definition of covariance:
 
 $$
-\text{Cov}(W, V) = \mathbb{E}(W.V) - \mathbb{E}(W)\mathbb{E}(V)
+\text{Cov}(W, V) = \mathbb{E}(W \cdot V) - \mathbb{E}(W)\mathbb{E}(V)
 $$
 
 For a given parameter $W = \hat{\theta}$ and the score function $V = {\partial \ell}/{\partial \theta}$:
 
 $$
-\text{Var}\left( \frac{\partial \ell}{\partial \theta} \right) = \mathbb{E}\left[ \left( \frac{\partial \ell}{\partial \theta} \right)^2 \right] - \left( \mathbb{E}\left( \frac{\partial \ell}{\partial \theta} \right) \right)^2
+\text{Var}\left( \frac{\partial \ell}{\partial \theta} \right) = \mathbb{E}\left[ \left( \frac{\partial \ell}{\partial \theta} \right)^2 \right] - \mathbb{E}\left( \frac{\partial \ell}{\partial \theta} \right)^2
 $$
 
 The expected value for the score function is equal zero for any statistical model, so $\left[ \mathbb{E}\left( {\partial \ell}/{\partial \theta} \right) \right]^2 = 0$, hence:
@@ -53,41 +53,49 @@ $$
 And
 
 $$
-\text{Cov}\left(\hat{\theta}, \frac{\partial \ell}{\partial \theta}\right) = \mathbb{E}\left(\hat{\theta}. \frac{\partial \ell}{\partial \theta}\right) - \mathbb{E}(\hat{\theta}) \mathbb{E}\left(\frac{\partial \ell}{\partial \theta}\right)
+\text{Cov}\left(\hat{\theta}, \frac{\partial \ell}{\partial \theta}\right) = \mathbb{E}\left(\hat{\theta} \cdot \frac{\partial \ell}{\partial \theta}\right) - \mathbb{E}(\hat{\theta}) \mathbb{E}\left(\frac{\partial \ell}{\partial \theta}\right)
 $$
 
 $$
-\text{Cov}\left(\hat{\theta}, \frac{\partial \ell}{\partial \theta}\right) = \mathbb{E}\left(\hat{\theta} \frac{\partial \ell}{\partial \theta}\right)
+\text{Cov}\left(\hat{\theta}, \frac{\partial \ell}{\partial \theta}\right) = \mathbb{E}\left(\hat{\theta} \cdot \frac{\partial \ell}{\partial \theta}\right)
 $$
 
 Finally:
 
 $$
-Var(\hat{\theta}) \geq \frac{{Cov}^2(\hat{\theta}, \frac{\partial \ell}{\partial \theta})}{I(\theta)} = \frac{\mathbb{E}\left(\hat{\theta} \frac{\partial \ell}{\partial \theta}\right)^2}{I(\theta)}
+Var(\hat{\theta}) \geq \frac{{Cov}^2(\hat{\theta}, \frac{\partial \ell}{\partial \theta})}{I(\theta)} = \frac{\mathbb{E}\left(\hat{\theta} \cdot \frac{\partial \ell}{\partial \theta}\right)^2}{I(\theta)}
 $$
 
 As $\theta = E(\hat{\theta})$:
 
 $$
-\theta = E(\hat{\theta}) = \int \dots \int \hat{\theta}(y) f(y; \theta) \, dy
+\theta = \mathbb{E}(\hat{\theta}) = \int \dots \int \hat{\theta}(y) f(y; \theta) \, dy
 $$
 
 Taking the derivative of this equation, the left side returns 1 and the right side returns:
 
 $$
-\frac{\partial}{\partial \theta} \int \dots \int \hat{\theta}(y) f(y; \theta) \, dy = \int \dots \int \hat{\theta}(y) \frac{\partial f(y; \theta)}{\partial \theta} \, dy
+\frac{\partial}{\partial \theta} \int \dots \int \hat{\theta}(y) f(y; \theta) \ dy =
 $$
 
 $$
-= \int \dots \int \hat{\theta}(y) \frac{\partial f(y; \theta)}{\partial \theta} \cdot f(y; \theta) \, dy
+= \int \dots \int \hat{\theta}(y) \frac{\partial f(y; \theta)}{\partial \theta} \ dy
 $$
 
 $$
-\int \dots \int \hat{\theta}(y) \frac{\partial \log f(y; \theta)}{\partial \theta} \cdot f(y; \theta) \, dy
+= \int \dots \int \hat{\theta}(y) \frac{\partial f(y; \theta)}{\partial \theta} \cdot \fraq{f(y; \theta)}{f(y; \theta)} \ dy
 $$
 
 $$
-\mathbb{E}\left( \hat{\theta}(Y) \frac{\partial \log f(Y; \theta)}{\partial \theta} \right) = \text{Cov}\left( \hat{\theta}(Y), \frac{\partial \log f(Y; \theta)}{\partial \theta} \right)
+= \int \dots \int \hat{\theta}(y) \frac{\partial \log f(y; \theta)}{\partial \theta} \cdot f(y; \theta) \ dy
+$$
+
+$$
+= \mathbb{E}\left( \hat{\theta}(Y) \frac{\partial \log f(Y; \theta)}{\partial \theta} \right)
+$$
+
+$$
+= \text{Cov}\left( \hat{\theta}(Y), \frac{\partial \log f(Y; \theta)}{\partial \theta} \right)
 $$
 
 $$
