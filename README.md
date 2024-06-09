@@ -99,10 +99,14 @@ $$
 $$
 
 $$
-= \text{Cov}\left( \hat{\theta}(Y), \frac{\partial \log f(Y; \theta)}{\partial \theta} \right) = 1
+= \text{Cov}\left( \hat{\theta}(Y), \frac{\partial \log f(Y; \theta)}{\partial \theta} \right)
 $$
 
 Therefore:
+
+$$
+\text{Cov}\left( \hat{\theta}(Y), \frac{\partial \log f(Y; \theta)}{\partial \theta} \right) = 1
+$$
 
 $$
 Var(\hat{\theta}) \geq \frac{1}{I(\theta)}
