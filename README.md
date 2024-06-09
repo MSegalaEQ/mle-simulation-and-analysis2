@@ -24,38 +24,53 @@ The expected value for the score function, $\left( E\left( \frac{\partial \ell}{
 $$
 \text{Var}\left( \frac{\partial \ell}{\partial \theta} \right) = E\left( \left( \frac{\partial \ell}{\partial \theta} \right)^2 \right) = I(\theta)
 $$
+
 And
+
 $$
 \text{Cov}\left(\hat{\theta}, \frac{\partial \ell}{\partial \theta}\right) = E\left(\hat{\theta} \frac{\partial \ell}{\partial \theta}\right) - E(\hat{\theta}) E\left(\frac{\partial \ell}{\partial \theta}\right)
 $$
+
 $$
 \text{Cov}\left(\hat{\theta}, \frac{\partial \ell}{\partial \theta}\right) = E\left(\hat{\theta} \frac{\partial \ell}{\partial \theta}\right)
 $$
+
 Finally:
+
 $$
 V(\hat{\theta}) \geq \frac{\text{Cov}^2(\hat{\theta}, \frac{\partial \ell}{\partial \theta})}{I(\theta)} = \frac{\text{E}\left(\hat{\theta} \frac{\partial \ell}{\partial \theta}\right)^2}{I(\theta)}
 $$
+
 As $\theta = E(\hat{\theta})$:
+
 $$
 \theta = E(\hat{\theta}) = \int \dots \int \hat{\theta}(y) f(y; \theta) \, dy
 $$
+
 Taking the derivative of this equation, the left side returns 1 and the right side returns:
+
 $$
 \frac{\partial}{\partial \theta} \int \dots \int \hat{\theta}(y) f(y; \theta) \, dy = \int \dots \int \hat{\theta}(y) \frac{\partial f(y; \theta)}{\partial \theta} \, dy
 $$
+
 $$
 = \int \dots \int \hat{\theta}(y) \frac{\partial f(y; \theta)}{\partial \theta} \cdot f(y; \theta) \, dy
 $$
+
 $$
 \int \dots \int \hat{\theta}(y) \frac{\partial \log f(y; \theta)}{\partial \theta} \cdot f(y; \theta) \, dy
 $$
+
 $$
 E\left( \hat{\theta}(Y) \frac{\partial \log f(Y; \theta)}{\partial \theta} \right) = \text{Cov}\left( \hat{\theta}(Y), \frac{\partial \log f(Y; \theta)}{\partial \theta} \right)
 $$
+
 $$
 \text{Cov}\left( \hat{\theta}(Y), \frac{\partial \log f(Y; \theta)}{\partial \theta} \right) = 1
 $$
+
 Therefore:
+
 $$
 Var(\hat{\theta}) \geq \frac{1}{I(\theta)}
 $$
