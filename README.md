@@ -114,4 +114,4 @@ $$
 
 ## Final Considerations
 
-Maximun likelihood method not only yields estimations centered around the true value, but also has its own tools to assess parameter variance. It is of great value to know whether attained values are sufficiently accurate. For unbiased parameters, the Cramér–Rao bound theorem offers complementary insight into MLE, demonstrating that, among the unbiased parameters, variance possesses a lower bound and the closer the estimated variance is to the lower bound, the more favorable it is within a given statistical model.
+Maximun likelihood method not only yields estimations centered around the true value, but also has its own tools to assess parameter variance. It is of great value to know whether attained values are sufficiently accurate. For unbiased parameters, the Cramér–Rao bound theorem offers complementary insight into MLE, demonstrating that, among the unbiased parameters, variance possesses a lower bound and the closer the estimated variance is to the lower bound, the more accurate the estimation will be for a given statistical model.
