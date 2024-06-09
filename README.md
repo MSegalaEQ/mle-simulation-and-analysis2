@@ -35,13 +35,13 @@ $$
 Using the definition of covariance:
 
 $$
-\text{Cov}(W, V) = E(WV) - E(W)E(V)
+\text{Cov}(W, V) = E(W*V) - E(W)E(V)
 $$
 
-For a given parameter $W = \hat{\theta}$ and the score function $V = \frac{\partial \ell}{\partial \theta}$:
+For a given parameter $W = \hat{\theta}$ and the score function $V = {\partial \ell}/{\partial \theta}$:
 
 $$
-\text{Var}\left( \frac{\partial \ell}{\partial \theta} \right) = E\left( \left( \frac{\partial \ell}{\partial \theta} \right)^2 \right) - \left( E\left( \frac{\partial \ell}{\partial \theta} \right) \right)^2
+\text{Var}\left( \frac{\partial \ell}{\partial \theta} \right) = E\left[ \left( \frac{\partial \ell}{\partial \theta} \right)^2 \right] - \left( E\left( \frac{\partial \ell}{\partial \theta} \right) \right)^2
 $$
 
 The expected value for the score function, $\left( E\left( \frac{\partial \ell}{\partial \theta} \right) \right)^2$, is equal zero for any statistical model, so:
