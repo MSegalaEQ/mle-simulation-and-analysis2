@@ -86,6 +86,18 @@ $$
 = \int \dots \int \hat{\theta}(y) \frac{\partial f(y; \theta)}{\partial \theta} \cdot \frac{f(y; \theta)}{f(y; \theta)} \ dy
 $$
 
+By the chain rule:
+
+$$
+\frac{y'}{y} = (\log{y})'
+$$
+
+$$
+\frac{\frac{\partial f(y; \theta)}{\partial \theta}}{f(y; \theta)} = \frac{\partial \log f(y; \theta)}{\partial \theta}
+$$
+
+Then:
+
 $$
 = \int \dots \int \hat{\theta}(y) \frac{\partial \log f(y; \theta)}{\partial \theta} \cdot f(y; \theta) \ dy
 $$
