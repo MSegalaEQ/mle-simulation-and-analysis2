@@ -2,18 +2,36 @@
 
 Referring back to the [previous post](https://github.com/MSegalaEQ/mle-simulation-and-analysis), it is established that the maximum likelihood estimation (MLE) approach provides estimations centered around the original parameter value, but how good indeed is this approach is not obvious. Due to the fact that the access to a large number of measurements from the same dataset is unrealistic, in practice, the parameter estimation process is often unique an with limited data.
 
-![MLE expected value approximation with simulated data]([multiple-sample-result.png](https://github.com/MSegalaEQ/mle-simulation-and-analysis/raw/main/multiple-sample-result.png))
+![MLE expected value approximation with simulated data](https://github.com/MSegalaEQ/mle-simulation-and-analysis/raw/main/multiple-sample-result.png)
 
 Examining the example in this figure, despite a higher likelihood for $`θ_{MLE}`$ to be 5, it may be near 2, 8, or any other value. In other words, with only an unique estimation, accurate result is not guaranteed. This is primarily because likelihood is not about finding the true parameter values - values that generate the samples of observed data - but rather which parameter values are more consistent to represent the given sample. In a bad day, a sample might lead to a poor approximation of the parameters.
 
 In estimation theory and statistics, the Cramér–Rao bound is a theoretical result found in literature that establishes the lower limit of variance for unbiased estimators, given a fixed sample size. According to this theorem, this limit is equal to the inverse of the Fisher Information ($I$):
-$$Var(θ) = \frac{1}{I(θ)}
+
+$$
+Var(θ) = \frac{1}{I(θ)}
+$$
 
 A simplified demonstration is shown ahead.
 
 ## Theoretical Proof
 
-Between two random variables $W$ and $V$, the expression $|\text{Corr}(W, V)| \leq 1$ in addition to $\text{Corr}(W, V) = \frac{\text{Cov}(W, V)}{\sqrt{\text{Var}(W) \cdot \text{Var}(V)}}$ will provide the result: $\text{Cov}^2(W, V) \leq \text{Var}(W) \cdot \text{Var}(V)$. Therefore: $\text{Var}(\hat{W}) \geq \frac{\text{Cov}^2(\hat{W}, V)}{\text{Var}(V)}$. Using the definition of covariance $\text{Cov}(W, V) = E(WV) - E(W)E(V)$, for a given parameter $W = \hat{\theta}$ and the score function $V = \frac{\partial \ell}{\partial \theta}$:
+Between two random variables $W$ and $V$, the expression
+$$|\text{Corr}(W, V)| \leq 1$$
+in addition to 
+$$\text{Corr}(W, V) = \frac{\text{Cov}(W, V)}{\sqrt{\text{Var}(W) \cdot \text{Var}(V)}}$$
+provides the result:
+
+$$
+\text{Cov}^2(W, V) \leq \text{Var}(W) \cdot \text{Var}(V)
+$$
+
+Therefore: 
+$$
+\text{Var}(\hat{W}) \geq \frac{\text{Cov}^2(\hat{W}, V)}{\text{Var}(V)}$. Using the definition of covariance $\text{Cov}(W, V) = E(WV) - E(W)E(V)
+$$
+
+For a given parameter $W = \hat{\theta}$ and the score function $V = \frac{\partial \ell}{\partial \theta}$:
 
 $$
 \text{Var}\left( \frac{\partial \ell}{\partial \theta} \right) = E\left( \left( \frac{\partial \ell}{\partial \theta} \right)^2 \right) - \left( E\left( \frac{\partial \ell}{\partial \theta} \right) \right)^2
