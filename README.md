@@ -26,9 +26,16 @@ $$
 \text{Cov}^2(W, V) \leq \text{Var}(W) \cdot \text{Var}(V)
 $$
 
-Therefore: 
+Therefore:
+
 $$
-\text{Var}(\hat{W}) \geq \frac{\text{Cov}^2(\hat{W}, V)}{\text{Var}(V)}$. Using the definition of covariance $\text{Cov}(W, V) = E(WV) - E(W)E(V)
+\text{Var}(\hat{W}) \geq \frac{\text{Cov}^2(\hat{W}, V)}{\text{Var}(V)}$
+$$
+
+Using the definition of covariance:
+
+$$
+\text{Cov}(W, V) = E(WV) - E(W)E(V)
 $$
 
 For a given parameter $W = \hat{\theta}$ and the score function $V = \frac{\partial \ell}{\partial \theta}$:
