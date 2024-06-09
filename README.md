@@ -29,7 +29,7 @@ $$
 Therefore:
 
 $$
-\text{Var}(\hat{W}) \geq \frac{\text{Cov}^2(\hat{W}, V)}{\text{Var}(V)}$
+\text{Var}(W) \geq \frac{\text{Cov}^2(W, V)}{\text{Var}(V)}$
 $$
 
 Using the definition of covariance:
