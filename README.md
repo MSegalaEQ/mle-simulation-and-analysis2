@@ -93,7 +93,7 @@ $$
 $$
 
 $$
-\frac{\frac{\partial f(y; \theta)}{\partial \theta}}{f(y; \theta)} = \frac{\partial \log f(y; \theta)}{\partial \theta}
+\frac{\partial f(y; \theta)}{\partial \theta} \cdot {f(y; \theta)}^-1 = \frac{\partial \log f(y; \theta)}{\partial \theta}
 $$
 
 Then:
